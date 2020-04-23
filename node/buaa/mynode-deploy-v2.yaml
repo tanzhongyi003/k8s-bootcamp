@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mynode-v2
+spec:
+  selector:
+    matchLabels:
+      app: mynode
+  template:
+    metadata:
+      labels:
+        app: mynode
+        version: "2.0"
+    spec:
+      containers:
+      - name: mynode
+        image: "tanzhongyibidu/mynode:2.0"
+        ports:
+        - containerPort: 8080
+

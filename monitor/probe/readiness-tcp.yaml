@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: readiness-tcp
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: readiness-tcp
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: readiness-tcp
+          image: "hub.baidubce.com/bootcamp/liveness-tcp:1.0.0"
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10

@@ -1,0 +1,61 @@
+body {
+    background: url(../images/empty_bg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.go-back {
+    float: left;
+    height: 2rem;
+    top: 0.5rem;
+    flex-grow: 1;
+}
+
+.dz-head {
+    display: flex;
+}
+
+.dz-select {
+    width: 5rem;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    margin-right: 0.2rem;
+    flex-grow: 1;
+}
+
+.select-wrap {
+    top: 0.5rem;
+    flex-grow: 44;
+    display: inline-flex;
+}
+
+.list-item > div {
+    display: inline-block;
+}
+
+.list-item {
+    padding: 1.2rem 0 1.84rem 0.5rem;
+    border: solid 0.1rem #e0e0e0;
+}
+
+.dz-item-info {
+    font-size: 0.5rem;
+    vertical-align: top;
+    width: 14.2rem;
+}
+
+.dz-item-info > p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.dz-item-info p:first-child {
+    color: #4a4;
+    font-size: 1rem;
+}
+
+.dz-item-info P:last-child {
+    color: #f90;
+}

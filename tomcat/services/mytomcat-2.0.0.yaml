@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "mytomcat-svc"
+  namespace: xxx
+spec:
+  selector:
+    app: "mytomcat"
+    version: 2.0.0

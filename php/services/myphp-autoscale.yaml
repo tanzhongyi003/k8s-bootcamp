@@ -1,0 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: myphp-svc
+  namespace: xxx
+  labels:
+    app: myphp
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort
+  selector:
+    app: myphp
+    version: autoscale

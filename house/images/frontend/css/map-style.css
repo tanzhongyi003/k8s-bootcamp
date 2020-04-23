@@ -1,0 +1,50 @@
+body {
+    background-image: url(../images/mashen_map.png);
+    background-size: cover;
+}
+
+.dz-head {
+    padding-right: 2rem;
+}
+
+.go-back {
+    float: left;
+    height: 2rem;
+    top: 0.5rem;
+}
+
+.section {
+    margin-top: 4rem;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    text-align: center;
+
+    opacity: 0.8;
+    background-color: #29f;
+}
+
+.circle > div {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.sec2 .circle, .sec3 .circle {
+    display: inline-block;
+}
+
+.sec1 .circle {
+    margin: 0 auto;
+}
+
+.sec3 .circle {
+    float: right;
+}
+
+.circle > div {
+    top: 2rem;
+}

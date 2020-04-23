@@ -1,0 +1,44 @@
+body {
+    background-image: url(../images/search_bg.jpg);
+    background-size: cover;
+}
+
+.text-bar {
+    font-size: 1.1rem;
+    height: 12rem;
+    line-height: 12rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.content {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.content img {
+    height: 1rem;
+    z-index: 1;
+    left: 1.8rem;
+    top: 0.143rem;
+}
+
+.content input {
+    width: 14rem;
+    height: 2rem;
+    line-height: 2rem;
+    border: solid 0.1rem #e0e0e0;
+    border-radius: 0.3rem;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    padding-left: 1.8rem;
+}
+
+.content div {
+    margin-top: 4rem;
+}
+
+.dz-pop-middle {
+    padding: 2rem;
+}
+

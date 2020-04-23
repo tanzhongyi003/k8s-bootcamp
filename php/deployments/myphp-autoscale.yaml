@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: myphp-autoscale
+  namespace: xxx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myphp
+        track: autoscale
+        version: autoscale
+    spec:
+      containers:
+        - name: myphp
+          resources:
+              requests:
+                  cpu: "300m"
+                  memory: 1Gi
+              limits:
+                  cpu: "500m"
+                  memory: 2Gi
+          imagePullPolicy: Always
+          image: "hub.baidubce.com/bootcamp/myphp:autoscale"
+          ports:
+            - name: http
+              containerPort: 80

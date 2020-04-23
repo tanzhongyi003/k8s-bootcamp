@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: liveness-exec
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: liveness-exec
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: liveness-exec
+          image: "hub.baidubce.com/bootcamp/liveness-exec:1.0.0"
+          args:
+            - /bin/sh
+            - -c
+            - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+          livenessProbe:
+            exec:
+              command:
+              - cat
+              - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5

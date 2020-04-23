@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mypython-deployment
+  namespace: xxx
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: mypython
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: mypython
+          image: "hub.baidubce.com/bootcamp/mypython:1.0.0"
+          ports:
+            - name: http
+              containerPort: 8080

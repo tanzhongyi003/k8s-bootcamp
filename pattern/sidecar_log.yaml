@@ -1,0 +1,30 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: my-pod
+  namespace: default
+spec:
+  volumes:
+  - name: vol-logs
+    emptyDir: {}
+  containers:
+  - name: app
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: [ "/bin/sh" ]
+    args:
+    - "-c"
+    - "while true; do RAND=$(shuf -i 1-10 -n 1); echo ${RAND} > /var/log/num.log; sleep 5; done"
+    volumeMounts:
+    - name: vol-logs
+      mountPath: /var/log
+  - name: num-checker
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: vol-logs
+      mountPath: /var/log
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "while true; do NUM=$(cat /var/log/num.log); if [ ${NUM} -gt 7 ]; then echo 'good job!'; else echo 'better luck next time'; fi; sleep 5; done"

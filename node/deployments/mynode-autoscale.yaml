@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mynode-deployment
+  namespace: xxx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mynode
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: mynode
+          resources:
+              requests:
+                  cpu: "300m"
+                  memory: 1Gi
+              limits:
+                  cpu: "500m"
+                  memory: 2Gi
+          imagePullPolicy: Always
+          image: "hub.baidubce.com/bootcamp/mynode:autoscale"
+          ports:
+            - name: http
+              containerPort: 8080

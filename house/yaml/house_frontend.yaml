@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-house-dep
+  labels: 
+    app: frontend-house
+spec:
+  selector:
+    matchLabels:
+      app: frontend-house
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: frontend-house
+    spec:
+      containers:
+        - name: frontend-house
+          image: hub.baidubce.com/bootcamp/frontend-house
+          imagePullPolicy: Always
+          volumeMounts:
+          - name: config
+            mountPath: "/etc/nginx/custom/"
+          ports:
+            - containerPort: 80
+      volumes:
+        - name: config
+          configMap:
+            name: frontend-conf
+            items:
+            - key: upstream.conf
+              path: upstream.conf
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-house-svc
+  labels: 
+    app: frontend-house
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: frontend-house
+  type: LoadBalancer
+  

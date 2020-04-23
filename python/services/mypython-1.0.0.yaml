@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mypython-svc
+  namespace: xxx
+spec:
+  selector:
+    app: mypython
+    version: 1.0.0

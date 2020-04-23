@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mynode-green
+  namespace: xxx
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: mynode
+        track: stable
+        version: 2.0.0
+    spec:
+      containers:
+        - name: mynode
+          imagePullPolicy: Always
+          image: "hub.baidubce.com/bootcamp/mynode:2.0.0"
+          ports:
+            - name: http
+              containerPort: 8080

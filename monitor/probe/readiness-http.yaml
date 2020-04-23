@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: readiness-http
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: readiness-http
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: readiness-http
+          image: "hub.baidubce.com/bootcamp/readness-http:3.0.0"
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+              httpHeaders:
+              - name: Custom-Header
+                value: Awesome
+            initialDelaySeconds: 3
+            periodSeconds: 3

@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mysqld-exporter
+spec:
+  selector:
+    matchLabels:
+      app: mysqld-exporter
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9104"
+      labels:
+        app: mysqld-exporter
+    spec:
+      containers:
+        - name: mysqld-exporter
+          image: hub.baidubce.com/bootcamp/prometheus-mysqld-exporter:1.0.0
+          env:
+            - name: DATA_SOURCE_NAME
+              value: root:root123!@({mysql-cluster-ip}:3306)/
+          ports:
+            - containerPort: 9104
+
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-exporter-svc
+  labels:
+    app: mysqld-exporter
+spec:
+  ports:
+    - port: 9104
+      targetPort: 9104
+  selector:
+    app: mysqld-exporter

@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #34495E;
+    position: relative;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+@media screen and (min-width: 320px) {
+    html {font-size: 14px;}
+}
+
+@media screen and (min-width: 360px) {
+    html {font-size: 16px;}
+}
+
+@media screen and (min-width: 400px) {
+    html {font-size: 18px;}
+}
+
+@media screen and (min-width: 440px) {
+    html {font-size: 20px;}
+}
+
+@media screen and (min-width: 480px) {
+    html {font-size: 22px;}
+}
+
+@media screen and (min-width: 640px) {
+    html {font-size: 28px;}
+}
+
+/*APP头部*/
+.dz-head{
+    height: 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    width: 100%;
+    background: rgba(26, 188, 156, 0.8);
+    color: #fff;
+}
+
+/*按钮*/
+.dz-btn{
+    height: 2.5rem;
+    width: 6rem;
+    background: #1ABC9C;
+    color: #fff;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.dz-btn:active,.dz-btn:visited{
+    background: #16A085;
+    color: #eee;
+}
+
+/*遮罩浮层*/
+.dz-pop-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+    display: none;
+}
+
+/*下拉单*/
+.dz-select{
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    font-size: 0.9rem;
+    height: 2.5rem;
+    position: relative;
+    z-index: 1;
+    padding-left: 0.3rem;
+    float: left;
+}
+
+/*列表图片*/
+.dz-item-img{
+    width: 8rem;
+    height: 6rem;
+}
+
+/*弹出框*/
+.pop-bg{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+}
+.dz-pop-body{
+    position: fixed;
+    z-index: 999;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 16rem;
+    margin: 0 auto;
+    border: none;
+    border-radius: 3px;
+}
+.dz-pop-head{
+    font-size: 1.2rem;
+    height: 2.5rem;
+    padding: 0.7rem 1rem 0.3rem 1rem ;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+.dz-pop-middle{
+    padding: 0.2rem 1rem 0.8rem 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    color: #999;
+}
+.dz-pop-middle p{
+    color: #999;
+}
+.dz-pop-foot{
+    padding: 0.6rem 1rem;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.dz-pop-foot .dz-pop-comfirm{
+    color: #16A085;
+}
+.dz-pop-foot .dz-pop-cancel{
+    color: #BDC3C7;
+}
+.dz-pop-foot span{
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+

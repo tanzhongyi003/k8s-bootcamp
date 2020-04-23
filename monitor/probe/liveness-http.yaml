@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: liveness-http
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: liveness-http
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: liveness-http
+          image: "hub.baidubce.com/bootcamp/liveness-http:1.0.0"
+          args:
+              - /server
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
+            timeoutSeconds: 1

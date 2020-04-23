@@ -1,0 +1,23 @@
+apiVersion: v1
+data:
+  application.properties: |
+    spring.application.name=house-backend
+    server.port=8080
+    logging.console_enabled=true
+    logging.log_file_path=/logs/house-backend.log
+    logging.log_level=INFO
+    datasource.url=jdbc:mysql://mysql-house-svc:3306/code_master?useUnicode=true&characterEncoding=UTF-8
+    datasource.username=root
+    datasource.password=${mysql_password}
+    datasource.driverClassName=com.mysql.jdbc.Driver
+    mybatis.mapperLocations=classpath:mapper/*Dao.xml
+    mybatis.typeAliasesPackage=com.baidu.codemaster.dal.model
+    b1=-65
+    a1=7
+    b2=136
+    a2=3
+    b3=141.11
+    a3=4.98
+kind: ConfigMap
+metadata:
+  name: backend-conf

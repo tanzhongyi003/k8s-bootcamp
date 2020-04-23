@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: mynode-svc
+  namespace: xxx
+spec:
+  selector:
+    app: mynode
+    version: 1.0.0

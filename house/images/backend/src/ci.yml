@@ -1,0 +1,10 @@
+Global:
+  tool : build_submitter
+Default:
+  profile : [deploy]
+Profiles:
+- profile:
+  name : deploy
+  env : centos6u3
+  command : export JAVA_HOME=/home/scmtools/buildkit/java/jdk1.8.0_181 && /usr/maven/apache-maven-3.0.4/bin/mvn -U clean deploy && cp Dockerfile output/
+  release : true

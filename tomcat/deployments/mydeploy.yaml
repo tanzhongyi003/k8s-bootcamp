@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mytomcat
+  name: mytomcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mytomcat
+  template:
+    metadata:
+      labels:
+        app: mytomcat
+    spec:
+      containers:
+      - image: tanzhongyibidu/mytomcat:1.0
+        name: mytomcat

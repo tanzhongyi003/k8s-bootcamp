@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" type="text/css" href="../css/common-style.css">
+    <link rel="stylesheet" type="text/css" href="../css/list-style.css">
+    <title>Room List</title>
+</head>
+<body>
+    <header class="dz-head">
+        <img class="go-back" src="../images/map_left_arrow.svg" alt="go back" />
+        <span class="select-wrap">
+            <select name="residentialZone" class="dz-select location-switch" onchange="onSelectChange()">
+            </select>
+
+            <select name="area" class="dz-select square-switch" onchange="onSelectChange()">
+                <option value="room-square">面积</option>
+                <option value="50">50以下</option>
+                <option value="100">100以下</option>
+                <option value="150">150以下</option>
+                <option value="200">200以下</option>
+                <option value="300">200以上</option>
+            </select>
+
+            <select name="houseType" class="dz-select type-switch" onchange="onSelectChange()">
+                <option value="house-type">户型</option>
+                <option value="2室1厅">2室1厅</option>
+                <option value="3室2厅">3室2厅</option>
+                <option value="3室1厅">3室1厅</option>
+                <option value="1室0厅">1室0厅</option>
+                <option value="1室1厅">1室1厅</option>
+                <option value="2室2厅">2室2厅</option>
+            </select>
+
+            <select name="orientation" class="dz-select orientation-switch" onchange="onSelectChange()">
+                <option value="room-orientation">朝向</option>
+                <option value="东">东</option>
+                <option value="南">南</option>
+                <option value="西">西</option>
+                <option value="北">北</option>
+                <option value="东南">东南</option>
+                <option value="西南">西南</option>
+                <option value="东北">东北</option>
+                <option value="西北">西北</option>
+            </select>
+        </span>
+    </header>
+
+    <div class="list-body">
+
+    </div>
+</body>
+</html>
+<script src="../js/zepto.min.js"></script>
+
+<script type="text/javascript" src="../js/list.js"></script>
+<script type="text/javascript">
+
+</script>

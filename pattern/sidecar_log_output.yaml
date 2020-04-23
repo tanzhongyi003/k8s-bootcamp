@@ -1,0 +1,29 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: my-pod
+spec:
+  volumes:
+  - name: vol-logs
+    emptyDir: {}
+  containers:
+  - name: app
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command: [ "/bin/sh" ]
+    args:
+    - "-c"
+    - "while true; do  echo 'Hello World!' + `date` >> /var/log/mylog ;sleep 1;done"
+    volumeMounts:
+    - name: vol-logs
+      mountPath: /var/log
+  - name: logoutput
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: vol-logs
+      mountPath: /var/log
+    command:
+    - "/bin/sh"
+    - "-c"
+    - "tail -f /var/log/mylog "

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mytomcat-svc
+  labels:
+    app: mytomcat
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: NodePort
+  selector:
+    app: mytomcat
+    version: "2.0"
+

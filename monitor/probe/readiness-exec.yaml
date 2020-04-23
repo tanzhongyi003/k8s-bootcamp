@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: readiness-exec
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: readiness-exec
+        track: stable
+        version: 1.0.0
+    spec:
+      containers:
+        - name: readiness-exec
+          image: "hub.baidubce.com/bootcamp/liveness-exec:1.0.0"
+          args:
+            - /bin/sh
+            - -c
+            - sleep 30;touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /tmp/healthy
+            initialDelaySeconds: 5
+            periodSeconds: 5

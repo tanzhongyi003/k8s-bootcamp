@@ -1,0 +1,144 @@
+.go-back {
+    float: left;
+    height: 2rem;
+    top: 0.5rem;
+    margin-right: 2rem;
+}
+
+.pages-record, .pages-bubbles {
+    height: 1.5rem;
+    top: 0.3rem;
+}
+
+.right-bar {
+    float: right;
+    margin-right: 1rem;
+}
+.pages-record {
+    margin-right: 0.5rem;
+}
+
+.banner {
+    height: 12rem;
+    width: 100%;
+}
+
+.abstract {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.7143rem;
+}
+
+.msg-cols {
+    height: 5rem;
+    margin: 0 1rem;
+    border: solid 0.1rem #e0e0e0;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    align-items: center;
+}
+
+.msg-cols span {
+    flex-grow: 1;
+}
+
+.msg-cols span:nth-child(2) {
+    border: solid 0.1rem #e0e0e0;
+    border-top: none;
+    border-bottom: none;
+}
+
+span div {
+    text-align: center;
+}
+
+span div:first-child {
+    color: #ccc;
+}
+
+span div:last-child, sup {
+    color: #e41;
+}
+
+.tag-bar {
+    margin: 1rem;
+    font-size: 0.5rem;
+}
+
+.tag-bar span {
+    padding: 0.2857rem;
+    margin-right: 0.25rem;
+    color: #0b6;
+    background: rgba(0, 174, 102, 0.2);
+}
+
+.tag-bar span:first-child {
+    color: #f90;
+    background: rgba(255, 137, 3, 0.2);
+}
+
+.tag-bar span:last-child {
+    color: #29f;
+    background: rgba(27, 141, 255, 0.2);
+}
+
+.list-container div {
+    margin: 0.8571rem;
+}
+
+span span:first-child {
+    color: #ccc;
+}
+
+.left-list {
+    display: inline-block;
+    width: 50%;
+}
+
+footer {
+    background-color: #EDEDF0;
+    width: 100%;
+    height: 3.07rem;
+    line-height: 3.07rem;
+    position:fixed;
+    bottom:0;
+    display: flex;
+}
+
+footer div {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer-left {
+    background-color: #f90;
+    color: #fff;
+}
+
+.footer-right {
+    background-color: #0b6;
+    color: #fff;
+}
+
+.left-list sup {
+    color: #000;
+}
+
+.head-title {
+    color: #fff;
+}
+
+.totalPrice, .houseType {
+    margin-top: 0.5rem;
+}
+
+.area {
+    margin-top: 0.3rem;
+}
+
+.dz-pop-middle {
+    padding: 2rem;
+}
+

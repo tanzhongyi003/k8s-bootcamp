@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: "myphp-svc"
+  namespace: xxx
+spec:
+  selector:
+    app: "myphp"
+    version: 2.0.0
